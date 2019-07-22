@@ -9,8 +9,12 @@ Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
 const countNumberOfElements = (arr) => {
-  return arr.reduce();
+  return arr.reduce ((acc, value) => {
+    acc += 1;
+    return acc;
+  }, 0);
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -69,8 +73,12 @@ let starWarsData = [{
 }];
 
 const returnNames = (arr) => {
-  // Solution code here...
+  return arr.reduce((acc, element) => {
+    acc.push(element.name);
+    return acc;
+  }, []);
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -81,7 +89,10 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (str) => {
-  // Solution code here...
+  let arr = str.split('');
+  return arr.reduce((acc, value) =>{
+    return value + acc;
+  }, '');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -134,7 +145,14 @@ const characters = [
 ];
 
 const countNumberOfChildren = (arr) => {
-  // Solution code here...
+  return arr.reduce((acc, value) =>{
+    if (Object.keys(value).includes('children')){
+      acc += value.children.length;
+      return acc;
+    }else{
+      return acc;
+    }
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -237,11 +255,11 @@ DO NOT CHANGE any of the below code.
 Run your tests from the console: jest challenges-09.test.js
 ------------------------------------------------------------------------------------------------ */
 
-describe('Testing challenge 1', () => {
-  test('It should return the length of the array', () => {
-    expect(countNumberOfElements([1, 2, 3, 4, 5])).toStrictEqual(5);
-  });
-});
+// describe('Testing challenge 1', () => {
+//   test('It should return the length of the array', () => {
+//     expect(countNumberOfElements([1, 2, 3, 4, 5])).toStrictEqual(5);
+//   });
+// });
 
 describe('Testing challenge 2', () => {
   test('It should return an array continaing the names of the characters', () => {
