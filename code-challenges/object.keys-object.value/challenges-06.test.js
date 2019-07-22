@@ -129,7 +129,9 @@ Write a function named totalCharacters that takes in an array and returns the nu
 ------------------------------------------------------------------------------------------------ */
 
 const totalCharacters = (arr) => {
-  // Solution code here...
+  arr.forEach(element=>{
+      if(Object.value)
+  })
 };
 
 /* ------------------------------------------------------------------------------------------------
